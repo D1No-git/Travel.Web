@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using Travel.Data.Contexts;
+
 
 namespace Travel.WebApi
 {
@@ -26,6 +29,9 @@ namespace Travel.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Register TravelDbContext as a service in IServiceCollection
+            services.AddDbContext<TravelDbContext>(options => options
+                .UseSqlite("Data Source=TravelTourDatabase.sqlite3"));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
