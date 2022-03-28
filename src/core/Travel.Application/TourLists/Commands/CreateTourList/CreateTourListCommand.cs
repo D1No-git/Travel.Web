@@ -28,6 +28,8 @@ namespace Travel.Application.TourLists.Commands.CreateTourList
 
         public async Task<int> Handle(CreateTourListCommand request, CancellationToken cancellationToken)
         {
+            //var entity = new TourList { City = request.City, Country = request.Country, About = request.About }; -- IN CASE SWAGGER POST DON'T WORK
+
             var entity = new TourList { City = request.City };
             _context.TourLists.Add(entity);
             await _context.SaveChangesAsync(cancellationToken);
