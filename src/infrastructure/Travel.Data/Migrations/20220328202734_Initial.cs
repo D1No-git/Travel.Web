@@ -13,8 +13,8 @@ namespace Travel.Data.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     City = table.Column<string>(type: "TEXT", nullable: false),
-                    Country = table.Column<string>(type: "TEXT", nullable: true),
-                    About = table.Column<string>(type: "TEXT", nullable: true)
+                    Country = table.Column<string>(type: "TEXT", nullable: false),
+                    About = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

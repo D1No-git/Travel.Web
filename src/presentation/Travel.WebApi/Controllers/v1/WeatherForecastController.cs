@@ -9,8 +9,9 @@ namespace Travel.WebApi.Controllers.v1
 {
     /// <summary>
     /// The annotation means we are explicitly tagging WeatherForecastController
-    /// as deprecated.
+    /// as deprecated - dead.
     /// </summary>
+
     [ApiVersion("1.0", Deprecated = true)]
     public class WeatherForecastController : ApiController
     {
